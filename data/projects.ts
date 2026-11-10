@@ -1,11 +1,10 @@
-﻿export interface Project {
+export interface Project {
   id: string;
   title: string;
   description: string;
   tags: string[];
   image: string;
   liveUrl: string; // Link website yang bisa diakses
-  adminUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -20,12 +19,11 @@ export const projects: Project[] = [
   },
   {
     id: "dna-client-survey",
-    title: "PT DNA Client Survey & Admin Portal",
+    title: "PT DNA Client Experience Survey",
     description:
-      "Sistem survei kepuasan klien 5-tahap dengan proteksi wajib Google Maps, audit mutu 21 butir evaluasi, portal dashboard korporat terproteksi, serta aplikasi desktop Windows resmi.",
-    tags: ["JavaScript", "HTML5", "CSS3", "Supabase", "Electron", "Vercel"],
+      "Sistem survei kepuasan klien 5-tahap interaktif untuk PT DNA Advertising dengan alur terpadu deklarasi Google Maps review, kompresi foto otomatis, dan verifikasi penilaian digital.",
+    tags: ["JavaScript", "HTML5", "CSS3", "Supabase", "Vercel"],
     image: "/dna-survey-preview.png",
     liveUrl: "https://pt-dna-survey.vercel.app/",
-    adminUrl: "https://pt-dna-survey.vercel.app/admin",
   },
 ];
