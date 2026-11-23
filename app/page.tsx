@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#030712] text-slate-100 selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-[#09090b] text-zinc-100 selection:bg-emerald-600 selection:text-white">
       {/* Floating Pill Navbar */}
       <Navbar />
 

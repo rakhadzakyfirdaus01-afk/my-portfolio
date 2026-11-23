@@ -1,4 +1,7 @@
-import { Code2, Server, Wrench, CheckCircle } from "lucide-react";
+"use client";
+
+import { Code2, Server, Wrench } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Skills() {
   const skillGroups = [
@@ -23,33 +26,44 @@ export default function Skills() {
   ];
 
   return (
-    <section id="keahlian" className="py-20 border-t border-slate-800/80 bg-[#040814]">
+    <section id="keahlian" className="py-24 border-t border-zinc-800/80 bg-[#0c0c0e]">
       <div className="mx-auto max-w-6xl px-6">
         
         {/* Section Header */}
-        <div className="text-center mb-14">
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-blue-400">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-14"
+        >
+          <span className="font-mono text-xs uppercase tracking-[0.25em] text-emerald-400">
             TECHNICAL CAPABILITIES
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             Teknologi & Keahlian
           </h2>
-          <p className="mt-2 text-sm text-slate-400 max-w-xl mx-auto">
+          <p className="mt-2 text-sm text-zinc-400 max-w-xl mx-auto">
             Kumpulan bahasa pemrograman, framework, dan peralatan yang biasa saya gunakan dalam membangun produk digital.
           </p>
-        </div>
+        </motion.div>
 
-        {/* 3 Columns */}
+        {/* 3 Columns with Framer Motion */}
         <div className="grid gap-8 md:grid-cols-3">
-          {skillGroups.map((group) => {
+          {skillGroups.map((group, idx) => {
             const Icon = group.icon;
             return (
-              <div
+              <motion.div
                 key={group.category}
-                className="flex flex-col justify-between rounded-3xl border border-slate-800/90 bg-slate-900/60 p-6 transition-all duration-300 hover:border-slate-700 hover:bg-slate-900/80"
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ y: -6 }}
+                className="flex flex-col justify-between rounded-3xl border border-zinc-800/90 bg-zinc-900/60 p-6 transition-colors hover:border-zinc-700 hover:bg-zinc-900/80"
               >
                 <div>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-600/10 border border-blue-500/20 text-blue-400">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-600/10 border border-emerald-500/20 text-emerald-400">
                     <Icon size={22} />
                   </div>
 
@@ -57,22 +71,22 @@ export default function Skills() {
                     {group.category}
                   </h3>
 
-                  <p className="mt-2 text-xs leading-relaxed text-slate-400">
+                  <p className="mt-2 text-xs leading-relaxed text-zinc-400">
                     {group.description}
                   </p>
                 </div>
 
-                <div className="mt-6 flex flex-wrap gap-2 pt-4 border-t border-slate-800/80">
+                <div className="mt-6 flex flex-wrap gap-2 pt-4 border-t border-zinc-800/80">
                   {group.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-full border border-slate-700/80 bg-slate-800/80 px-3 py-1 text-xs font-medium text-slate-200 transition-colors hover:border-blue-500/50 hover:text-blue-300"
+                      className="rounded-full border border-zinc-700/80 bg-zinc-800/80 px-3 py-1 text-xs font-medium text-zinc-200 transition-colors hover:border-emerald-500/50 hover:text-emerald-300"
                     >
                       {skill}
                     </span>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

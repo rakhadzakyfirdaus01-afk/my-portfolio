@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircle, Mail, MapPin, Send, Check } from "lucide-react";
+import { MessageCircle, Mail, MapPin, Send } from "lucide-react";
+import { motion } from "framer-motion";
 
 function GithubIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
@@ -24,83 +25,92 @@ export default function Contact() {
   };
 
   return (
-    <section id="kontak" className="py-24 border-t border-slate-800/80 bg-[#030712]">
+    <section id="kontak" className="py-24 border-t border-zinc-800/80 bg-[#09090b]">
       <div className="mx-auto max-w-6xl px-6">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-blue-400">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="font-mono text-xs uppercase tracking-[0.25em] text-emerald-400">
             GET IN TOUCH
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             Hubungi & Terhubung
           </h2>
-          <p className="mt-2 text-sm text-slate-400 max-w-lg mx-auto">
+          <p className="mt-2 text-sm text-zinc-400 max-w-lg mx-auto">
             Terbuka untuk diskusi proyek, kesempatan magang, atau kolaborasi pengembangan web.
           </p>
-        </div>
+        </motion.div>
 
-        {/* 2 Cards Grid: Left Contact Info - Right Direct Form */}
+        {/* 2 Cards Grid */}
         <div className="grid gap-8 lg:grid-cols-12 max-w-5xl mx-auto items-start">
           
-          {/* Kolom Kiri: Info & Sosial (5 Kolom) */}
+          {/* Kolom Kiri: Info & Kontak */}
           <div className="lg:col-span-5 space-y-4">
             
-            <a
+            <motion.a
+              whileHover={{ x: 6 }}
               href="https://wa.me/6281228358630?text=Halo%20Rakha,%20saya%20melihat%20portofolio%20Anda."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 transition-all hover:border-emerald-500/40 hover:bg-slate-900 group"
+              className="flex items-center gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5 transition-all hover:border-emerald-500/40 hover:bg-zinc-900 group"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 group-hover:scale-105 transition-transform">
                 <MessageCircle size={22} />
               </div>
               <div>
-                <div className="text-xs text-slate-400">WhatsApp Langsung</div>
+                <div className="text-xs text-zinc-400">WhatsApp Langsung</div>
                 <div className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">
                   +62 812-2835-8630
                 </div>
               </div>
-            </a>
+            </motion.a>
 
-            <a
+            <motion.a
+              whileHover={{ x: 6 }}
               href="mailto:rakhadzakyfirdaus01@gmail.com"
-              className="flex items-center gap-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 transition-all hover:border-blue-500/40 hover:bg-slate-900 group"
+              className="flex items-center gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5 transition-all hover:border-emerald-500/40 hover:bg-zinc-900 group"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 group-hover:scale-105 transition-transform">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 group-hover:scale-105 transition-transform">
                 <Mail size={22} />
               </div>
               <div>
-                <div className="text-xs text-slate-400">Email Resmi</div>
-                <div className="text-sm font-bold text-white group-hover:text-blue-300 transition-colors truncate max-w-[210px] sm:max-w-none">
+                <div className="text-xs text-zinc-400">Email Resmi</div>
+                <div className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors truncate max-w-[210px] sm:max-w-none">
                   rakhadzakyfirdaus01@gmail.com
                 </div>
               </div>
-            </a>
+            </motion.a>
 
-            <a
+            <motion.a
+              whileHover={{ x: 6 }}
               href="https://github.com/rakhadzakyfirdaus01-afk"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 transition-all hover:border-slate-700 hover:bg-slate-900 group"
+              className="flex items-center gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5 transition-all hover:border-zinc-700 hover:bg-zinc-900 group"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-800 text-slate-300 group-hover:scale-105 transition-transform">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-zinc-800 text-zinc-300 group-hover:scale-105 transition-transform">
                 <GithubIcon className="h-5 w-5" />
               </div>
               <div>
-                <div className="text-xs text-slate-400">GitHub Profile</div>
-                <div className="text-sm font-bold text-white group-hover:text-slate-200 transition-colors">
+                <div className="text-xs text-zinc-400">GitHub Profile</div>
+                <div className="text-sm font-bold text-white group-hover:text-zinc-200 transition-colors">
                   rakhadzakyfirdaus01-afk
                 </div>
               </div>
-            </a>
+            </motion.a>
 
-            <div className="flex items-center gap-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+            <div className="flex items-center gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-rose-500/10 text-rose-400">
                 <MapPin size={22} />
               </div>
               <div>
-                <div className="text-xs text-slate-400">Domisili</div>
+                <div className="text-xs text-zinc-400">Domisili</div>
                 <div className="text-sm font-bold text-white">
                   Sidoarjo, Jawa Timur, Indonesia
                 </div>
@@ -109,19 +119,19 @@ export default function Contact() {
 
           </div>
 
-          {/* Kolom Kanan: Formulir Kirim Pesan Cepat (7 Kolom) */}
+          {/* Kolom Kanan: Form WhatsApp */}
           <div className="lg:col-span-7">
-            <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-6 sm:p-8">
+            <div className="rounded-3xl border border-zinc-800 bg-zinc-900/70 p-6 sm:p-8">
               <h3 className="text-lg font-bold text-white">
                 Kirim Pesan Cepat
               </h3>
-              <p className="mt-1 text-xs text-slate-400">
+              <p className="mt-1 text-xs text-zinc-400">
                 Pesan akan langsung diarahkan ke chat WhatsApp saya secara otomatis.
               </p>
 
               <form onSubmit={handleSendWA} className="mt-6 space-y-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                  <label className="block text-xs font-semibold text-zinc-300 mb-1.5">
                     Nama Anda
                   </label>
                   <input
@@ -129,13 +139,13 @@ export default function Contact() {
                     value={nama}
                     onChange={(e) => setNama(e.target.value)}
                     placeholder="Contoh: Pak Budi / Teman Belajar"
-                    className="w-full rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200 placeholder-slate-600 focus:border-blue-500 focus:outline-none"
+                    className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-xs text-zinc-200 placeholder-zinc-600 focus:border-emerald-500 focus:outline-none"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                  <label className="block text-xs font-semibold text-zinc-300 mb-1.5">
                     Pesan / Pertanyaan
                   </label>
                   <textarea
@@ -143,18 +153,20 @@ export default function Contact() {
                     value={pesan}
                     onChange={(e) => setPesan(e.target.value)}
                     placeholder="Tulis pesan atau tawaran kerja sama di sini..."
-                    className="w-full rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-xs text-slate-200 placeholder-slate-600 focus:border-blue-500 focus:outline-none resize-none"
+                    className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-xs text-zinc-200 placeholder-zinc-600 focus:border-emerald-500 focus:outline-none resize-none"
                     required
                   />
                 </div>
 
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-xs font-semibold text-white shadow-lg shadow-blue-600/25 transition-all hover:bg-blue-500"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-6 py-3.5 text-xs font-semibold text-white shadow-lg shadow-emerald-600/25 transition-all hover:bg-emerald-500"
                 >
                   <Send size={14} />
                   <span>Kirim Pesan ke WhatsApp</span>
-                </button>
+                </motion.button>
               </form>
             </div>
           </div>

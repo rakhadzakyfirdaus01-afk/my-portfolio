@@ -1,4 +1,7 @@
-import { GraduationCap, Briefcase, Calendar, CheckCircle2 } from "lucide-react";
+"use client";
+
+import { GraduationCap, Briefcase } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Experience() {
   const education = [
@@ -43,21 +46,27 @@ export default function Experience() {
   ];
 
   return (
-    <section id="pendidikan" className="relative py-20 border-t border-slate-800/80 bg-[#030712]">
+    <section id="pendidikan" className="relative py-24 border-t border-zinc-800/80 bg-[#09090b]">
       <div className="relative mx-auto max-w-6xl px-6">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-blue-400">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="font-mono text-xs uppercase tracking-[0.25em] text-emerald-400">
             TIMELINE & BACKGROUND
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             Pendidikan & Pengalaman
           </h2>
-          <p className="mt-2 text-sm text-slate-400 max-w-xl mx-auto">
+          <p className="mt-2 text-sm text-zinc-400 max-w-xl mx-auto">
             Jejak akademik dan rekam jejak pengembangan perangkat lunak yang telah saya jalani.
           </p>
-        </div>
+        </motion.div>
 
         {/* 2-Column Grid: Left Education - Right Experience */}
         <div className="grid gap-12 lg:grid-cols-2">
@@ -65,97 +74,115 @@ export default function Experience() {
           {/* Kolom Kiri: Pendidikan */}
           <div>
             <div className="flex items-center gap-2.5 mb-8">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600/15 text-blue-400">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-600/15 text-emerald-400">
                 <GraduationCap size={20} />
               </div>
               <h3 className="text-xl font-bold text-white">Pendidikan Formal</h3>
             </div>
 
-            <div className="relative border-l border-slate-800 ml-4 pl-6 space-y-8">
+            <div className="relative border-l border-zinc-800 ml-4 pl-6 space-y-8">
               {education.map((edu, idx) => (
-                <div key={idx} className="relative group">
-                  {/* Glowing Node Marker */}
-                  <div className="absolute -left-[31px] top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-slate-900 border-2 border-blue-500 text-[10px] font-bold text-blue-400">
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  className="relative group"
+                >
+                  <div className="absolute -left-[31px] top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-zinc-900 border-2 border-emerald-500 text-[10px] font-bold text-emerald-400">
                     {idx + 1}
                   </div>
 
-                  <div className="rounded-2xl border border-slate-800/90 bg-slate-900/60 p-5 transition-colors hover:border-slate-700">
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    className="rounded-2xl border border-zinc-800/90 bg-zinc-900/60 p-5 transition-all hover:border-zinc-700 hover:shadow-lg"
+                  >
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="rounded-full bg-blue-600/10 border border-blue-500/20 px-3 py-0.5 text-xs font-semibold text-blue-400">
+                      <span className="rounded-full bg-emerald-600/10 border border-emerald-500/20 px-3 py-0.5 text-xs font-semibold text-emerald-400">
                         {edu.period}
                       </span>
-                      <span className="text-xs text-slate-500 font-mono">Vocational High School</span>
+                      <span className="text-xs text-zinc-500 font-mono">Vocational High School</span>
                     </div>
 
                     <h4 className="mt-3 text-lg font-bold text-white">
                       {edu.institution}
                     </h4>
-                    <p className="text-xs font-semibold text-slate-300 mt-0.5">
+                    <p className="text-xs font-semibold text-zinc-300 mt-0.5">
                       {edu.degree}
                     </p>
 
-                    <p className="mt-3 text-xs leading-relaxed text-slate-400">
+                    <p className="mt-3 text-xs leading-relaxed text-zinc-400">
                       {edu.description}
                     </p>
 
-                    <div className="mt-4 flex flex-wrap gap-1.5 pt-3 border-t border-slate-800">
+                    <div className="mt-4 flex flex-wrap gap-1.5 pt-3 border-t border-zinc-800">
                       {edu.tags.map((t) => (
-                        <span key={t} className="rounded-md bg-slate-800/80 px-2 py-0.5 text-[11px] text-slate-300">
+                        <span key={t} className="rounded-md bg-zinc-800/80 px-2 py-0.5 text-[11px] text-zinc-300">
                           {t}
                         </span>
                       ))}
                     </div>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               ))}
             </div>
           </div>
 
-          {/* Kolom Kanan: Pengalaman & Proyek Nyata */}
+          {/* Kolom Kanan: Pengalaman & Proyek */}
           <div>
             <div className="flex items-center gap-2.5 mb-8">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-600/15 text-emerald-400">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-600/15 text-teal-400">
                 <Briefcase size={20} />
               </div>
               <h3 className="text-xl font-bold text-white">Pengalaman & Proyek</h3>
             </div>
 
-            <div className="relative border-l border-slate-800 ml-4 pl-6 space-y-6">
+            <div className="relative border-l border-zinc-800 ml-4 pl-6 space-y-6">
               {experience.map((exp, idx) => (
-                <div key={idx} className="relative group">
-                  {/* Node Marker */}
-                  <div className="absolute -left-[31px] top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-slate-900 border-2 border-emerald-500 text-[10px] font-bold text-emerald-400">
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  className="relative group"
+                >
+                  <div className="absolute -left-[31px] top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-zinc-900 border-2 border-teal-500 text-[10px] font-bold text-teal-400">
                     {idx + 1}
                   </div>
 
-                  <div className="rounded-2xl border border-slate-800/90 bg-slate-900/60 p-5 transition-colors hover:border-slate-700">
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    className="rounded-2xl border border-zinc-800/90 bg-zinc-900/60 p-5 transition-all hover:border-zinc-700 hover:shadow-lg"
+                  >
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="rounded-full bg-emerald-600/10 border border-emerald-500/20 px-2.5 py-0.5 text-xs font-semibold text-emerald-400">
+                      <span className="rounded-full bg-teal-600/10 border border-teal-500/20 px-2.5 py-0.5 text-xs font-semibold text-teal-400">
                         {exp.badge}
                       </span>
-                      <span className="text-xs text-slate-500 font-mono">{exp.period}</span>
+                      <span className="text-xs text-zinc-500 font-mono">{exp.period}</span>
                     </div>
 
                     <h4 className="mt-3 text-base font-bold text-white">
                       {exp.title}
                     </h4>
-                    <p className="text-xs text-blue-400 font-medium">
+                    <p className="text-xs text-emerald-400 font-medium">
                       {exp.role}
                     </p>
 
-                    <p className="mt-2 text-xs leading-relaxed text-slate-400">
+                    <p className="mt-2 text-xs leading-relaxed text-zinc-400">
                       {exp.description}
                     </p>
 
-                    <div className="mt-4 flex flex-wrap gap-1.5 pt-3 border-t border-slate-800">
+                    <div className="mt-4 flex flex-wrap gap-1.5 pt-3 border-t border-zinc-800">
                       {exp.tags.map((t) => (
-                        <span key={t} className="rounded-md bg-slate-800/80 px-2 py-0.5 text-[11px] text-slate-300">
+                        <span key={t} className="rounded-md bg-zinc-800/80 px-2 py-0.5 text-[11px] text-zinc-300">
                           {t}
                         </span>
                       ))}
                     </div>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               ))}
             </div>
           </div>
