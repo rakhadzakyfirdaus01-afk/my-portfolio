@@ -1,6 +1,6 @@
 "use client";
 
-import { X, ExternalLink, Globe, Sparkles } from "lucide-react";
+import { X, ExternalLink, Globe } from "lucide-react";
 import { Project } from "@/data/projects";
 
 interface ProjectModalProps {
@@ -13,53 +13,46 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-3 sm:p-6 backdrop-blur-md transition-all duration-300"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-3 sm:p-6 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="flex h-[92vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-900 shadow-2xl shadow-cyan-500/10"
+        className="flex h-[90vh] w-full max-w-5xl flex-col overflow-hidden rounded-xl border border-slate-700 bg-slate-900 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Modal */}
-        <div className="flex items-center justify-between border-b border-white/[0.08] bg-slate-950 px-4 py-3 sm:px-6">
+        <div className="flex items-center justify-between border-b border-slate-800 bg-slate-950 px-4 py-3 sm:px-6">
           <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-400">
-              <Globe size={18} />
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-850 text-sky-400">
+              <Globe size={16} />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <h3 className="text-sm font-bold text-white sm:text-base">
-                  {project.title}
-                </h3>
-                <span className="rounded-full bg-cyan-500/20 px-2 py-0.5 text-[10px] font-semibold text-cyan-300">
-                  Live View
-                </span>
-              </div>
+              <h3 className="text-sm font-bold text-white sm:text-base">
+                {project.title}
+              </h3>
               <p className="hidden text-xs text-slate-400 sm:block font-mono">
                 {project.liveUrl}
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-2.5">
-            {/* Open in new tab */}
+          <div className="flex items-center gap-2">
             <a
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-xl bg-cyan-500/15 px-3 py-1.5 text-xs font-semibold text-cyan-300 transition-colors hover:bg-cyan-500 hover:text-white"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-sky-600 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-sky-500"
             >
               <span>Buka Tab Baru</span>
-              <ExternalLink size={13} />
+              <ExternalLink size={12} />
             </a>
 
-            {/* Close button */}
             <button
               onClick={onClose}
-              className="rounded-xl p-2 text-slate-400 transition-colors hover:bg-slate-800 hover:text-white"
+              className="rounded-lg p-1.5 text-slate-400 transition-colors hover:bg-slate-800 hover:text-white"
               aria-label="Tutup"
             >
-              <X size={19} />
+              <X size={18} />
             </button>
           </div>
         </div>
