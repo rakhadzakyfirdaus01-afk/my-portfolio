@@ -1,93 +1,71 @@
-import { ArrowRight, MessageCircle, MapPin, GraduationCap, Code } from "lucide-react";
+import { ArrowDown, MessageCircle, Code2, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section id="tentang" className="py-14 md:py-20 lg:py-24 border-b border-slate-800">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
-          
-          {/* Kolom Teks Pengenalan (7 Kolom) */}
-          <div className="flex flex-col items-start lg:col-span-7">
-            
-            {/* Tagline Sekolah / Jurusan */}
-            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-sky-400">
-              <GraduationCap size={16} />
-              <span>Siswa SMK Antartika 2 Sidoarjo • Jurusan RPL</span>
-            </div>
+    <section className="relative min-h-[92vh] flex items-center justify-center pt-24 pb-16 overflow-hidden">
+      
+      {/* Topographic Contour Background Curves */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.06]">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <path d="M-100 200 C 200 100, 400 400, 800 250 S 1400 150, 1800 350" fill="none" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M-100 350 C 300 250, 600 500, 1000 350 S 1500 250, 1900 450" fill="none" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M-100 500 C 250 400, 700 650, 1100 500 S 1600 400, 2000 600" fill="none" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M-100 650 C 350 550, 800 800, 1200 650 S 1700 550, 2100 750" fill="none" stroke="currentColor" strokeWidth="1.5" />
+        </svg>
+      </div>
 
-            {/* Judul Utama */}
-            <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl leading-tight">
-              Membangun Solusi Web Modern & Berbasis{" "}
-              <span className="text-sky-400">
-                Kecerdasan Buatan
-              </span>
-            </h1>
+      {/* Subtle radial ambient lighting */}
+      <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 h-[500px] w-[700px] rounded-full bg-blue-600/10 blur-[150px]" />
 
-            {/* Paragraf Pengenalan yang Humanis */}
-            <p className="mt-5 text-base leading-relaxed text-slate-300 sm:text-lg">
-              Halo, perkenalkan saya <strong className="text-white font-semibold">Rakha Dzaky Firdaus</strong>. Saya berfokus pada pengembangan aplikasi web interaktif menggunakan ekosistem Next.js, integrasi AI, serta pembuatan pengalaman antarmuka yang cepat dan responsif.
-            </p>
-
-            {/* Detail Profil Singkat */}
-            <div className="mt-6 flex flex-col gap-2.5 text-sm text-slate-300">
-              <div className="flex items-center gap-2">
-                <Code size={16} className="text-sky-400 shrink-0" />
-                <span>Fokus: Next.js, TypeScript, Tailwind CSS, & Integrasi API Gemini</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin size={16} className="text-rose-400 shrink-0" />
-                <span>Domisili: Sidoarjo, Jawa Timur, Indonesia</span>
-              </div>
-            </div>
-
-            {/* Tombol Aksi */}
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="#projects"
-                className="inline-flex items-center gap-2 rounded-lg bg-sky-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-sky-500 shadow-sm"
-              >
-                <span>Lihat Proyek Pilihan</span>
-                <ArrowRight size={16} />
-              </Link>
-
-              <a
-                href="https://wa.me/6281228358630?text=Halo%20Rakha,%20saya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20berkolaborasi%20atau%20berdiskusi."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/80 px-5 py-3 text-sm font-medium text-slate-200 transition-colors hover:border-emerald-500/50 hover:bg-emerald-600/10 hover:text-emerald-300"
-              >
-                <MessageCircle size={16} className="text-emerald-400" />
-                <span>Hubungi Saya (WhatsApp)</span>
-              </a>
-            </div>
-
-          </div>
-
-          {/* Kolom Foto Profil Developer (5 Kolom) */}
-          <div className="w-full max-w-sm mx-auto lg:col-span-5 lg:max-w-none">
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/90 p-4 shadow-xl">
-              
-              {/* Foto Rakha */}
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-slate-950">
-                <img
-                  src="/rakha.jpg"
-                  alt="Rakha Dzaky Firdaus"
-                  className="h-full w-full object-cover object-center"
-                />
-              </div>
-
-              {/* Keterangan di bawah foto */}
-              <div className="mt-4 pt-3 border-t border-slate-800 flex flex-col gap-0.5">
-                <h2 className="text-base font-bold text-white">Rakha Dzaky Firdaus</h2>
-                <p className="text-xs text-sky-400">Junior Fullstack & AI Web Developer</p>
-                <p className="text-xs text-slate-400 mt-1">SMK Antartika 2 Sidoarjo • RPL</p>
-              </div>
-
-            </div>
-          </div>
-
+      <div className="relative mx-auto max-w-5xl px-6 text-center">
+        
+        {/* Welcome Tag */}
+        <div className="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.25em] text-blue-400 mb-6">
+          <span>WELCOME TO MY PORTOFOLIO</span>
         </div>
+
+        {/* Big Bold Headline */}
+        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-white uppercase leading-[1.05]">
+          RAKHA DZAKY <br className="hidden sm:inline" />
+          <span className="text-blue-500">FIRDAUS</span>
+        </h1>
+
+        {/* Role & School */}
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-2 text-sm sm:text-base font-medium text-slate-300">
+          <span>Software Engineer</span>
+          <span className="text-slate-600">•</span>
+          <span className="text-blue-400">AI Web Developer</span>
+          <span className="text-slate-600">•</span>
+          <span>SMK Antartika 2 Sidoarjo</span>
+        </div>
+
+        {/* Bio Ringkas */}
+        <p className="mx-auto mt-5 max-w-2xl text-sm sm:text-base leading-relaxed text-slate-400">
+          Aku berfokus pada pengembangan aplikasi web modern menggunakan Next.js, integrasi Gemini AI API, serta perancangan antarmuka yang bersih, cepat, dan berdampak nyata.
+        </p>
+
+        {/* Action Buttons */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
+          <Link
+            href="#proyek"
+            className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-all hover:bg-blue-500 hover:scale-105"
+          >
+            <span>Lihat Portofolio</span>
+            <ArrowDown size={15} />
+          </Link>
+
+          <a
+            href="https://wa.me/6281228358630?text=Halo%20Rakha,%20saya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20berkolaborasi."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-6 py-3 text-sm font-medium text-slate-200 transition-all hover:border-slate-500 hover:bg-slate-800"
+          >
+            <MessageCircle size={15} className="text-emerald-400" />
+            <span>Hubungi Saya</span>
+          </a>
+        </div>
+
       </div>
     </section>
   );
