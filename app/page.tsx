@@ -6,12 +6,12 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0B1120] text-slate-100 selection:bg-cyan-500 selection:text-white">
+    <div className="relative min-h-screen bg-[#060913] text-slate-100 selection:bg-cyan-500 selection:text-white overflow-hidden">
       {/* Navbar Atas */}
       <Navbar />
 
       {/* Konten Utama */}
-      <main>
+      <main className="relative z-10">
         <Hero />
         <Skills />
         <Projects />
