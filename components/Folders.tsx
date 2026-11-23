@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Globe, Terminal, Database } from "lucide-react";
+import { Globe, Layout, Database } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Folders() {
@@ -20,14 +20,14 @@ export default function Folders() {
       ],
     },
     {
-      title: "Desktop & Tooling",
-      count: "2 Proyek",
-      icon: Terminal,
+      title: "Frontend Engineering",
+      count: "4 Stack",
+      icon: Layout,
       color: "border-teal-500/30 text-teal-400 bg-teal-500/10",
-      description: "Software native Windows menggunakan C# (.NET/WPF), WebView2, dan automasi.",
+      description: "Arsitektur antarmuka modern yang cepat, interaktif, responsif, dan elegan.",
       items: [
-        { name: "The Zero Launcher", desc: "Cloud & Desktop Distribution Platform" },
-        { name: "LuaTools Localization", desc: "i18n string schema & Python validation" },
+        { name: "Next.js 16 & React 19", desc: "Server components & client hydration" },
+        { name: "Tailwind CSS & Motion", desc: "Clean typography & spring physics animation" },
       ],
     },
     {
@@ -39,7 +39,7 @@ export default function Folders() {
       items: [
         { name: "Supabase PostgreSQL", desc: "RLS Policies & Custom PL/pgSQL Triggers" },
         { name: "Prisma ORM & MySQL", desc: "Schema migrations & relational mapping" },
-        { name: "Vercel & Railway", desc: "Automated continuous cloud deployment" },
+        { name: "Vercel Continuous Deploy", desc: "Automated continuous cloud deployment" },
       ],
     },
   ];

@@ -11,7 +11,7 @@ export default function Experience() {
       degree: "Rekayasa Perangkat Lunak (RPL)",
       description:
         "Fokus pembelajaran pada arsitektur web modern, pemrograman berorientasi objek, basis data relasional (SQL), serta implementasi algoritma dan pengujian perangkat lunak.",
-      tags: ["Web Programming", "Next.js", "C# & Java", "Database Systems"],
+      tags: ["Web Programming", "Next.js", "TypeScript", "Database Systems"],
     },
   ];
 
@@ -33,15 +33,6 @@ export default function Experience() {
       description:
         "Mengembangkan sistem survei kepuasan klien 5-tahap interaktif untuk PT DNA Advertising dengan alur deklarasi Google Maps review, kompresi foto otomatis, dan verifikasi penilaian digital.",
       tags: ["JavaScript", "HTML5", "CSS3", "Supabase", "Vercel"],
-    },
-    {
-      title: "The Zero Launcher & LuaTools",
-      role: "Systems Developer & Localization",
-      badge: "Desktop & Systems",
-      period: "2026",
-      description:
-        "Membangun desktop client C# (.NET/WPF) dengan backend Supabase PostgreSQL, serta berkontribusi dalam validasi internasionalisasi konsistensi string di ekosistem open source.",
-      tags: ["C#", ".NET", "PostgreSQL", "Python Validation"],
     },
   ];
 

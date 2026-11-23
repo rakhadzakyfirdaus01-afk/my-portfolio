@@ -21,7 +21,7 @@ export default function Skills() {
       category: "AI, Tools & Workflow",
       icon: Wrench,
       description: "Peralatan integrasi kecerdasan buatan, kontrol versi Git, dan otomasi deployment cloud.",
-      skills: ["Google Gemini API", "Git & GitHub", "Vercel Deployment", "C# (.NET)", "Python"],
+      skills: ["Google Gemini API", "Git & GitHub", "Vercel Deployment", "Responsive Design", "API Integration"],
     },
   ];
 
