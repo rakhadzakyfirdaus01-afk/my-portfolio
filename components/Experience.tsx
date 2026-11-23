@@ -9,9 +9,19 @@ export default function Experience() {
       institution: "SMK Antartika 2 Sidoarjo",
       period: "2024 – Sekarang",
       degree: "Rekayasa Perangkat Lunak (RPL)",
+      badgeType: "Vocational High School",
       description:
         "Fokus pembelajaran pada arsitektur web modern, pemrograman berorientasi objek, basis data relasional (SQL), serta implementasi algoritma dan pengujian perangkat lunak.",
       tags: ["Web Programming", "Next.js", "TypeScript", "Database Systems"],
+    },
+    {
+      institution: "SMP Hang Tuah 5 Candi",
+      period: "2021 – 2024",
+      degree: "Sekolah Menengah Pertama (SMP)",
+      badgeType: "Junior High School",
+      description:
+        "Menempuh pendidikan menengah pertama umum dan mulai aktif mengeksplorasi minat dasar pada bidang komputer dan teknologi informasi.",
+      tags: ["Pendidikan Menengah Pertama", "Dasar Komputer", "Akademik"],
     },
   ];
 
@@ -93,7 +103,7 @@ export default function Experience() {
                       <span className="rounded-full bg-emerald-600/10 border border-emerald-500/20 px-3 py-0.5 text-xs font-semibold text-emerald-400">
                         {edu.period}
                       </span>
-                      <span className="text-xs text-zinc-500 font-mono">Vocational High School</span>
+                      <span className="text-xs text-zinc-500 font-mono">{edu.badgeType}</span>
                     </div>
 
                     <h4 className="mt-3 text-lg font-bold text-white">
