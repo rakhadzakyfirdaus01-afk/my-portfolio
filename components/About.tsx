@@ -6,15 +6,25 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section id="tentang" className="relative py-24 border-t border-zinc-800/80 bg-[#0c0c0e]">
+    <section id="tentang" className="relative py-24 border-t border-zinc-800/80 bg-[#0c0c0e] overflow-hidden">
       
-      {/* Topographic Lines */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.04]">
+      {/* Topographic Lines with gentle drift */}
+      <motion.div
+        animate={{
+          x: [0, 20, 0],
+        }}
+        transition={{
+          duration: 15,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute inset-0 pointer-events-none opacity-[0.04]"
+      >
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <path d="M-100 150 C 300 50, 700 300, 1200 150 S 1700 250, 2000 150" fill="none" stroke="#10b981" strokeWidth="1.2" />
           <path d="M-100 300 C 400 200, 800 450, 1300 300 S 1800 400, 2100 300" fill="none" stroke="#10b981" strokeWidth="1.2" />
         </svg>
-      </div>
+      </motion.div>
 
       <div className="relative mx-auto max-w-6xl px-6">
         
@@ -55,12 +65,16 @@ export default function About() {
               Saya senang memecahkan masalah melalui kode yang rapi, terstruktur, serta membangun pengalaman digital yang nyata, interaktif, dan mudah digunakan orang banyak.
             </p>
             <div className="pt-2 flex justify-center lg:justify-start">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.96 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
                 <a
                   href="https://wa.me/6281228358630?text=Halo%20Rakha,%20saya%20tertarik%20berdiskusi%20denganmu."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/90 px-5 py-2.5 text-xs font-semibold text-zinc-200 hover:border-emerald-500 hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/90 px-5 py-2.5 text-xs font-semibold text-zinc-200 hover:border-emerald-500 hover:text-white transition-colors shadow-md"
                 >
                   <MessageCircle size={14} className="text-emerald-400" />
                   <span>Kirim Pesan WhatsApp</span>
@@ -69,41 +83,62 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Kolom Tengah: Foto Portrait Rakha dengan Animasi Spring */}
+          {/* Kolom Tengah: Foto Portrait Rakha dengan Continuous Floating Animation */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.15 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
             className="mx-auto w-full max-w-xs lg:col-span-4"
           >
+            {/* Continuous Gentle Float */}
             <motion.div
-              whileHover={{ y: -8, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              animate={{
+                y: [0, -10, 0],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              whileHover={{ scale: 1.04, rotate: 1 }}
               className="relative group"
             >
-              {/* Diffuse Emerald Aura */}
-              <div className="absolute -inset-2 rounded-3xl bg-emerald-500/20 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
+              {/* Diffuse Pulsing Emerald Aura */}
+              <motion.div
+                animate={{
+                  opacity: [0.35, 0.65, 0.35],
+                  scale: [1, 1.04, 1],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute -inset-3 rounded-3xl bg-emerald-500/25 blur-2xl"
+              />
 
-              <div className="relative overflow-hidden rounded-3xl border border-zinc-700/80 bg-zinc-900 p-2.5 shadow-2xl">
+              <div className="relative overflow-hidden rounded-3xl border border-zinc-700/90 bg-zinc-900/90 p-3 shadow-2xl backdrop-blur-xl">
                 <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-zinc-950">
                   <img
                     src="/rakha.jpg"
                     alt="Rakha Dzaky Firdaus"
                     className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
+                  {/* Subtle inner gradient shade */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-60" />
                 </div>
                 
                 {/* Caption Bar */}
-                <div className="mt-3 px-2 pb-1 text-center">
-                  <div className="text-sm font-bold text-white">Rakha Dzaky Firdaus</div>
-                  <div className="text-[11px] text-emerald-400 font-medium">Fullstack & AI Web Developer</div>
+                <div className="mt-3.5 px-2 pb-1 text-center">
+                  <div className="text-sm font-bold text-white tracking-wide">Rakha Dzaky Firdaus</div>
+                  <div className="text-[11px] text-emerald-400 font-medium mt-0.5">Fullstack & AI Web Developer</div>
                 </div>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Kolom Kanan: Fokus Keahlian Utama */}
+          {/* Kolom Kanan: Fokus Keahlian Utama dengan Slide-in */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -113,11 +148,12 @@ export default function About() {
           >
             
             <motion.div
-              whileHover={{ x: 6 }}
-              className="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4 transition-colors hover:border-zinc-700"
+              whileHover={{ x: 8, scale: 1.01 }}
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
+              className="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4 transition-colors hover:border-emerald-500/50 hover:bg-zinc-900"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-600/10 text-emerald-400">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-600/10 text-emerald-400 border border-emerald-500/20">
                   <Code2 size={20} />
                 </div>
                 <div>
@@ -128,11 +164,12 @@ export default function About() {
             </motion.div>
 
             <motion.div
-              whileHover={{ x: 6 }}
-              className="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4 transition-colors hover:border-zinc-700"
+              whileHover={{ x: 8, scale: 1.01 }}
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
+              className="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4 transition-colors hover:border-teal-500/50 hover:bg-zinc-900"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-600/10 text-teal-400">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-600/10 text-teal-400 border border-teal-500/20">
                   <Cpu size={20} />
                 </div>
                 <div>
@@ -143,11 +180,12 @@ export default function About() {
             </motion.div>
 
             <motion.div
-              whileHover={{ x: 6 }}
-              className="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4 transition-colors hover:border-zinc-700"
+              whileHover={{ x: 8, scale: 1.01 }}
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
+              className="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4 transition-colors hover:border-cyan-500/50 hover:bg-zinc-900"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-600/10 text-cyan-400">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-600/10 text-cyan-400 border border-cyan-500/20">
                   <Database size={20} />
                 </div>
                 <div>
@@ -158,10 +196,14 @@ export default function About() {
             </motion.div>
 
             <div className="pt-2 flex justify-center lg:justify-start">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.96 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
                 <Link
                   href="#proyek"
-                  className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-2.5 text-xs font-semibold text-white hover:bg-emerald-500 transition-colors shadow-md shadow-emerald-600/20"
+                  className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-2.5 text-xs font-semibold text-white hover:bg-emerald-500 transition-colors shadow-lg shadow-emerald-600/20"
                 >
                   <span>Lihat Portofolio Proyek</span>
                   <ArrowRight size={13} />

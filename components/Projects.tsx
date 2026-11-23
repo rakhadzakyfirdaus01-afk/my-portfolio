@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { projects, Project } from "@/data/projects";
 import ProjectModal from "./ProjectModal";
-import { ExternalLink, Eye } from "lucide-react";
+import { ExternalLink, Eye, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Projects() {
@@ -23,7 +23,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="proyek" className="relative py-24 border-t border-zinc-800/80 bg-[#09090b]">
+    <section id="proyek" className="relative py-24 border-t border-zinc-800/80 bg-[#09090b] overflow-hidden">
       
       {/* Topographic Lines */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.04]">
@@ -53,20 +53,20 @@ export default function Projects() {
           </p>
 
           {/* Segmented Filter Control with Framer Motion Sliding Pill */}
-          <div className="mt-8 inline-flex items-center rounded-full border border-zinc-800 bg-zinc-900/80 p-1 backdrop-blur-md">
+          <div className="mt-8 inline-flex items-center rounded-full border border-zinc-800 bg-zinc-900/80 p-1 backdrop-blur-md shadow-lg">
             {filterTabs.map((tab) => {
               const isActive = filter === tab.id;
               return (
                 <button
                   key={tab.id}
                   onClick={() => setFilter(tab.id)}
-                  className="relative rounded-full px-4 py-1.5 text-xs font-semibold text-zinc-300 transition-colors hover:text-white"
+                  className="relative rounded-full px-5 py-2 text-xs font-semibold text-zinc-300 transition-colors hover:text-white"
                 >
                   {isActive && (
                     <motion.div
                       layoutId="filterTabPill"
-                      className="absolute inset-0 rounded-full bg-emerald-600 shadow-sm shadow-emerald-500/20"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      className="absolute inset-0 rounded-full bg-emerald-600 shadow-sm shadow-emerald-500/25"
+                      transition={{ type: "spring", stiffness: 400, damping: 28 }}
                     />
                   )}
                   <span className="relative z-10">{tab.label}</span>
@@ -87,16 +87,26 @@ export default function Projects() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
-                whileHover={{ y: -6 }}
-                className="group flex flex-col overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/60 transition-all duration-300 hover:border-emerald-500/40 hover:shadow-2xl hover:shadow-emerald-500/5"
+                whileHover={{ y: -8 }}
+                className="group flex flex-col overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/60 transition-all duration-300 hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10"
               >
                 {/* Preview Image with Clean Aspect Ratio */}
                 <div className="relative h-60 w-full overflow-hidden bg-zinc-950 sm:h-72 border-b border-zinc-800">
-                  <img
+                  <motion.img
+                    whileHover={{ scale: 1.06 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
                     src={project.image}
                     alt={project.title}
-                    className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-105"
+                    className="h-full w-full object-cover object-top"
                   />
+                  {/* Radar pulse tag */}
+                  <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-950/80 border border-emerald-500/30 text-[11px] font-semibold text-emerald-400 backdrop-blur-md">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                    </span>
+                    <span>Live Online</span>
+                  </div>
                 </div>
 
                 {/* Card Body */}
@@ -110,11 +120,11 @@ export default function Projects() {
                   </p>
 
                   {/* Tech Tags */}
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <div className="mt-5 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-zinc-700/80 bg-zinc-800/80 px-3 py-1 text-xs font-medium text-zinc-300"
+                        className="rounded-full border border-zinc-700/80 bg-zinc-800/80 px-3 py-1 text-xs font-medium text-zinc-300 transition-colors group-hover:border-zinc-600"
                       >
                         {tag}
                       </span>
@@ -122,28 +132,28 @@ export default function Projects() {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-zinc-800/80 pt-5 mt-auto">
+                  <div className="mt-7 flex flex-wrap items-center gap-3 border-t border-zinc-800/80 pt-5 mt-auto">
                     <motion.button
-                      whileHover={{ scale: 1.03 }}
-                      whileTap={{ scale: 0.97 }}
+                      whileHover={{ scale: 1.04 }}
+                      whileTap={{ scale: 0.96 }}
                       type="button"
                       onClick={() => setSelectedProject(project)}
-                      className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-800/90 px-4 py-2 text-xs font-semibold text-zinc-200 transition-colors hover:bg-zinc-700 hover:text-white"
+                      className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-800/90 px-5 py-2.5 text-xs font-semibold text-zinc-200 transition-colors hover:bg-zinc-700 hover:text-white"
                     >
                       <Eye size={14} />
                       <span>Coba di Sini</span>
                     </motion.button>
 
                     <motion.a
-                      whileHover={{ scale: 1.03 }}
-                      whileTap={{ scale: 0.97 }}
+                      whileHover={{ scale: 1.04 }}
+                      whileTap={{ scale: 0.96 }}
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-2 text-xs font-semibold text-white shadow-md shadow-emerald-600/20 transition-all hover:bg-emerald-500"
+                      className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-2.5 text-xs font-semibold text-white shadow-md shadow-emerald-600/20 transition-all hover:bg-emerald-500"
                     >
                       <span>Kunjungi Web</span>
-                      <ExternalLink size={13} />
+                      <ArrowUpRight size={14} />
                     </motion.a>
                   </div>
                 </div>
