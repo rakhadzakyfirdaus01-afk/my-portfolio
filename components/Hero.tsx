@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowDown, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowDown, MessageCircle, Sparkles, Download } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -149,6 +149,23 @@ export default function Hero() {
                 <ArrowDown size={15} />
               </motion.div>
             </Link>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: 1.06, y: -2 }}
+            whileTap={{ scale: 0.96 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          >
+            <a
+              href="/CV_Rakha_Dzaky_Firdaus.pdf"
+              download="CV_Rakha_Dzaky_Firdaus.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 rounded-full border border-emerald-500/40 bg-emerald-950/30 px-6 py-3.5 text-sm font-semibold text-emerald-300 transition-colors hover:border-emerald-500 hover:bg-emerald-900/40 shadow-lg shadow-emerald-950/20"
+            >
+              <Download size={16} className="text-emerald-400" />
+              <span>Download CV</span>
+            </a>
           </motion.div>
 
           <motion.div

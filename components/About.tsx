@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle, ArrowRight, Code2, Cpu, Database } from "lucide-react";
+import { MessageCircle, ArrowRight, Code2, Cpu, Database, Download } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -64,7 +64,24 @@ export default function About() {
             <p className="text-sm leading-relaxed text-zinc-400">
               Saya senang memecahkan masalah melalui kode yang rapi, terstruktur, serta membangun pengalaman digital yang nyata, interaktif, dan mudah digunakan orang banyak.
             </p>
-            <div className="pt-2 flex justify-center lg:justify-start">
+            <div className="pt-2 flex flex-wrap gap-3 justify-center lg:justify-start">
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.96 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
+                <a
+                  href="/CV_Rakha_Dzaky_Firdaus.pdf"
+                  download="CV_Rakha_Dzaky_Firdaus.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-emerald-500/50 bg-emerald-950/30 px-5 py-2.5 text-xs font-semibold text-emerald-300 hover:border-emerald-400 hover:bg-emerald-900/40 transition-colors shadow-md"
+                >
+                  <Download size={14} className="text-emerald-400" />
+                  <span>Unduh CV (PDF)</span>
+                </a>
+              </motion.div>
+
               <motion.div
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.96 }}
