@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 /**
  * Pure Minimalist Swallow Silhouette (Burung Walet / Sriti Estetik)
- * - Desain siluet organik murni tanpa elemen kartun (tidak ada paruh bebek / mata kancing)
- * - Sayap aerodinamis khas burung walet dengan animasi kepakan lentur (morphing curves)
+ * - Desain siluet organik murni tanpa elemen kartun
+ * - Sayap aerodinamis lentur dengan animasi morphing curves
  * - Tampilan anggun, profesional, dan mewah (dark obsidian + emerald aura)
  */
 function MinimalistSwallow({
@@ -20,15 +20,10 @@ function MinimalistSwallow({
   glowColor?: string;
   flapSpeed?: number;
 }) {
-  // Sayap Atas (Upstroke): Sayap melengkung anggun ke atas
   const wingUp =
     "M 14 6 Q 30 14, 45 27 Q 60 14, 76 6 Q 62 20, 45 28 Q 28 20, 14 6 Z";
-  
-  // Sayap Meluncur (Glide): Sayap terbentang lurus aerodinamis
   const wingGlide =
     "M 6 22 Q 26 23, 45 27 Q 64 23, 84 22 Q 65 29, 45 29 Q 25 29, 6 22 Z";
-  
-  // Sayap Bawah (Downstroke): Sayap menukik ke bawah mendorong udara
   const wingDown =
     "M 16 46 Q 30 36, 45 29 Q 60 36, 74 46 Q 60 35, 45 30 Q 30 35, 16 46 Z";
 
@@ -73,7 +68,6 @@ function MinimalistSwallow({
 
         {/* 2. BADAN & EKOR WALET BERCABANG (SWALLOWTAIL SILHOUETTE) */}
         <g>
-          {/* Ekor bercabang khas burung walet */}
           <path
             d="M 45 28 L 36 50 L 45 42 L 54 50 Z"
             fill="url(#swallowGrad)"
@@ -82,7 +76,6 @@ function MinimalistSwallow({
             strokeOpacity="0.35"
           />
 
-          {/* Badan ramping & kepala streamline */}
           <path
             d="M 45 10 C 42 12, 40 18, 41 28 C 42 35, 45 42, 45 42 C 45 42, 48 35, 49 28 C 50 18, 48 12, 45 10 Z"
             fill="url(#swallowGrad)"
@@ -91,7 +84,6 @@ function MinimalistSwallow({
             strokeOpacity="0.5"
           />
 
-          {/* Ujung kepala lancip siluet */}
           <path d="M 44 11 L 45 7 L 46 11 Z" fill="#34d399" />
         </g>
       </svg>
@@ -100,10 +92,7 @@ function MinimalistSwallow({
 }
 
 /**
- * Burung Hinggap di Dahan (Perched Silhouette):
- * - Siluet burung minimalis yang bertengger di ranting
- * - Bernapas halus dan ekor sesekali bergerak
- * - Klik / sentuh untuk terbang
+ * Burung Hinggap di Dahan (Perched Silhouette)
  */
 function MinimalistPerchedSwallow({
   onTakeoff,
@@ -141,7 +130,6 @@ function MinimalistPerchedSwallow({
           </linearGradient>
         </defs>
 
-        {/* Ekor walet menjuntai */}
         <motion.path
           d="M 24 25 L 36 38 L 33 39 L 22 28 Z"
           fill="#18181b"
@@ -159,7 +147,6 @@ function MinimalistPerchedSwallow({
           style={{ transformOrigin: "23px 26px" }}
         />
 
-        {/* Kaki mungil di dahan */}
         <path
           d="M 16 28 L 15 32 M 19 28 L 18 32"
           stroke="#10b981"
@@ -167,7 +154,6 @@ function MinimalistPerchedSwallow({
           strokeLinecap="round"
         />
 
-        {/* Badan burung dengan nafas halus */}
         <motion.g
           animate={{
             y: [0, -0.6, 0],
@@ -180,7 +166,6 @@ function MinimalistPerchedSwallow({
           }}
           style={{ transformOrigin: "17px 28px" }}
         >
-          {/* Siluet badan ramping */}
           <path
             d="M 10 16 C 8 21, 10 27, 15 28 C 21 29, 25 27, 27 23 C 26 18, 24 14, 20 11 C 15 9, 11 12, 10 16 Z"
             fill="url(#perchedSwallowGrad)"
@@ -188,7 +173,6 @@ function MinimalistPerchedSwallow({
             strokeWidth="0.6"
           />
 
-          {/* Sayap terlipat */}
           <path
             d="M 15 14 C 20 13, 25 16, 27 21 C 29 25, 27 29, 24 32 C 21 31, 18 28, 16 23 C 14 19, 14 16, 15 14 Z"
             fill="#18181b"
@@ -197,7 +181,6 @@ function MinimalistPerchedSwallow({
             strokeOpacity="0.6"
           />
 
-          {/* Kepala siluet menoleh */}
           <path
             d="M 9 15 C 8 11, 11 8, 15 8 C 18 8, 20 10, 19 14 C 16 13, 12 13, 9 15 Z"
             fill="#27272a"
@@ -214,8 +197,6 @@ function MinimalistPerchedSwallow({
 
 /**
  * Ranting Pohon Estetik (Zen Botanical Corner Branch)
- * - Ditempatkan ABSOLUTE di header / hero (TIDAK LAGI FIXED mengikuti scroll!)
- * - Tidak akan menghalangi judul "Proyek Pilihan" atau kartu konten saat di-scroll
  */
 function MinimalistCornerBranch({
   children,
@@ -254,7 +235,6 @@ function MinimalistCornerBranch({
             </linearGradient>
           </defs>
 
-          {/* Batang Utama Halus */}
           <path
             d="M 360 -10 C 310 15, 260 42, 205 82 C 160 115, 115 135, 50 142 C 95 150, 150 134, 195 98 C 250 58, 305 28, 360 35 Z"
             fill="url(#cleanBark)"
@@ -262,7 +242,6 @@ function MinimalistCornerBranch({
             strokeWidth="0.6"
           />
 
-          {/* Dahan Tempat Bertengger */}
           <path
             d="M 205 82 C 170 92, 135 100, 85 106 C 132 107, 168 98, 198 87 Z"
             fill="url(#cleanBark)"
@@ -271,7 +250,6 @@ function MinimalistCornerBranch({
             strokeOpacity="0.4"
           />
 
-          {/* Ranting Atas */}
           <path
             d="M 275 35 C 245 20, 212 12, 170 14 C 205 20, 238 30, 266 44 Z"
             fill="#18181b"
@@ -279,7 +257,6 @@ function MinimalistCornerBranch({
             strokeWidth="0.5"
           />
 
-          {/* Ranting Bawah */}
           <path
             d="M 230 62 C 198 102, 166 142, 120 172 C 150 148, 182 114, 216 75 Z"
             fill="#18181b"
@@ -287,7 +264,6 @@ function MinimalistCornerBranch({
             strokeWidth="0.5"
           />
 
-          {/* Dedaunan Minimalis Elegan */}
           <g>
             <path
               d="M 170 14 C 160 7, 146 8, 138 16 C 148 19, 163 18, 170 14 Z"
@@ -341,9 +317,11 @@ function MinimalistCornerBranch({
 }
 
 /**
- * FlyingBirds Component
- * - Berada di area langit atas (header/hero)
- * - Tidak akan menutupi atau mengganggu kartu proyek saat di-scroll
+ * The Sky Atmosphere (Alam Langit)
+ * Fitur:
+ * 1. Burung 1 (The Percher) bertengger di ranting pohon, istirahat dan terbang membelah langit.
+ * 2. Kawanan Burung (Flock of Birds - 5 ekor) terbang berseliweran dengan formasi natural di ketinggian berbeda.
+ * 3. Kabut langit halus semi-transparan (Ambient Celestial Mist).
  */
 export default function FlyingBirds() {
   const [isResting, setIsResting] = useState<boolean>(true);
@@ -352,7 +330,7 @@ export default function FlyingBirds() {
     setIsResting(false);
   }, []);
 
-  // Istirahat di dahan selama 7 detik lalu terbang
+  // Waktu istirahat di dahan 7 detik
   useEffect(() => {
     if (!isResting) return;
 
@@ -368,8 +346,9 @@ export default function FlyingBirds() {
   }, []);
 
   return (
-    <div className="absolute top-0 left-0 right-0 h-[100vh] pointer-events-none z-20 overflow-hidden">
-      {/* 1. RANTING POHON & BURUNG HINGGAP */}
+    <div className="absolute top-0 left-0 right-0 h-[105vh] pointer-events-none z-20 overflow-hidden">
+      
+      {/* 1. RANTING POHON & BURUNG BERTENGGER */}
       <MinimalistCornerBranch>
         <AnimatePresence>
           {isResting && (
@@ -378,7 +357,7 @@ export default function FlyingBirds() {
         </AnimatePresence>
       </MinimalistCornerBranch>
 
-      {/* 2. BURUNG 1: TERBANG ANGGUN MEMBELAH LANGIT DENGAN KEPALA DI DEPAN */}
+      {/* 2. BURUNG 1: SIKLUS TERBANG MEMBELAH LANGIT */}
       <AnimatePresence>
         {!isResting && (
           <motion.div
@@ -387,12 +366,11 @@ export default function FlyingBirds() {
             initial={{
               x: "82vw",
               y: "10vh",
-              scaleX: 1, // Menghadap kiri
+              scaleX: 1,
               rotate: -15,
               opacity: 0,
             }}
             animate={{
-              // Lintasan melengkung anggun di langit atas
               x: [
                 "82vw",
                 "58vw",
@@ -415,20 +393,8 @@ export default function FlyingBirds() {
                 "14vh",
                 "10vh",
               ],
-              scaleX: [
-                1,  // Menghadap kiri
-                1,  // Menghadap kiri
-                1,  // Menghadap kiri
-                1,  // Bank turn
-                -1, // Berbalik menghadap kanan
-                -1, // Menghadap kanan
-                -1, // Menghadap kanan
-                -1, // Menghadap kanan
-                1,  // Hinggap kembali ke dahan
-              ],
-              rotate: [
-                -15, -4, 4, 12, -14, -6, -2, -1, 0,
-              ],
+              scaleX: [1, 1, 1, 1, -1, -1, -1, -1, 1],
+              rotate: [-15, -4, 4, 12, -14, -6, -2, -1, 0],
               opacity: [0, 1, 1, 1, 1, 1, 1, 1, 1],
             }}
             transition={{
@@ -448,31 +414,128 @@ export default function FlyingBirds() {
         )}
       </AnimatePresence>
 
-      {/* 3. BURUNG 2: PENDAMPING DI LANGIT TINGGI */}
+      {/* 3. KAWANAN BURUNG (FLOCK OF BIRDS DI LANGIT ATAS) */}
+      
+      {/* Burung 2: Pemimpin Kawanan (Tinggi, Meluncur Halus) */}
       <motion.div
         className="absolute"
-        initial={{
-          scaleX: -1, // Menghadap kanan searah gerak dari kiri ke kanan
-        }}
+        initial={{ scaleX: -1 }}
         animate={{
-          x: ["-10vw", "22vw", "54vw", "84vw", "115vw"],
-          y: ["14vh", "11vh", "17vh", "13vh", "16vh"],
+          x: ["-10vw", "24vw", "56vw", "86vw", "115vw"],
+          y: ["14vh", "11vh", "18vh", "13vh", "17vh"],
           rotate: [-4, 2, -3, 3, -2],
         }}
         transition={{
-          duration: 25,
-          delay: 2,
+          duration: 24,
+          delay: 1,
           repeat: Infinity,
           ease: "linear",
         }}
       >
         <MinimalistSwallow
-          size={36}
+          size={38}
           color="#3f3f46"
-          glowColor="rgba(255,255,255,0.15)"
-          flapSpeed={0.62}
+          glowColor="rgba(255,255,255,0.18)"
+          flapSpeed={0.6}
         />
       </motion.div>
+
+      {/* Burung 3: Pendamping Burung 2 (Formasi Sayap Kanan) */}
+      <motion.div
+        className="absolute"
+        initial={{ scaleX: -1 }}
+        animate={{
+          x: ["-14vw", "20vw", "52vw", "82vw", "112vw"],
+          y: ["18vh", "15vh", "22vh", "17vh", "20vh"],
+          rotate: [-3, 3, -2, 4, -1],
+        }}
+        transition={{
+          duration: 25,
+          delay: 2.2,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      >
+        <MinimalistSwallow
+          size={32}
+          color="#27272a"
+          glowColor="rgba(16,185,129,0.2)"
+          flapSpeed={0.55}
+        />
+      </motion.div>
+
+      {/* Burung 4: Burung Jauh di Latar Belakang (Efek Kedalaman / Parallax) */}
+      <motion.div
+        className="absolute opacity-60"
+        initial={{ scaleX: -1 }}
+        animate={{
+          x: ["-8vw", "28vw", "62vw", "92vw", "116vw"],
+          y: ["8vh", "6vh", "10vh", "7vh", "9vh"],
+          rotate: [-2, 1, -1, 2, -1],
+        }}
+        transition={{
+          duration: 32,
+          delay: 5,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      >
+        <MinimalistSwallow
+          size={24}
+          color="#18181b"
+          glowColor="rgba(255,255,255,0.1)"
+          flapSpeed={0.68}
+        />
+      </motion.div>
+
+      {/* Burung 5: Burung Melintas Berlawanan Arah (Dari Kanan ke Kiri di Langit Bawah) */}
+      <motion.div
+        className="absolute opacity-75"
+        initial={{ scaleX: 1 }}
+        animate={{
+          x: ["112vw", "84vw", "52vw", "20vw", "-10vw"],
+          y: ["24vh", "28vh", "22vh", "26vh", "23vh"],
+          rotate: [4, -2, 3, -3, 2],
+        }}
+        transition={{
+          duration: 28,
+          delay: 8,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      >
+        <MinimalistSwallow
+          size={30}
+          color="#27272a"
+          glowColor="rgba(16,185,129,0.2)"
+          flapSpeed={0.58}
+        />
+      </motion.div>
+
+      {/* Burung 6: Burung Kecil Menyusul di Kejauhan */}
+      <motion.div
+        className="absolute opacity-50"
+        initial={{ scaleX: 1 }}
+        animate={{
+          x: ["116vw", "88vw", "56vw", "24vw", "-6vw"],
+          y: ["21vh", "24vh", "19vh", "23vh", "20vh"],
+          rotate: [3, -1, 2, -2, 1],
+        }}
+        transition={{
+          duration: 30,
+          delay: 9.5,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      >
+        <MinimalistSwallow
+          size={20}
+          color="#18181b"
+          glowColor="rgba(255,255,255,0.08)"
+          flapSpeed={0.72}
+        />
+      </motion.div>
+
     </div>
   );
 }
