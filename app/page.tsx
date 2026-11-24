@@ -9,10 +9,14 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FlyingBirds from "@/components/FlyingBirds";
 import OceanAtmosphere from "@/components/OceanAtmosphere";
+import Clouds from "@/components/Clouds";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#09090b] text-zinc-100 selection:bg-emerald-600 selection:text-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#0c234a] via-[#08172c] to-[#021120] text-zinc-100 selection:bg-sky-600 selection:text-white">
+      {/* ☁️ AWAN LEMBUT MELAYANG DI LANGIT (Aesthetic Drifting Clouds) */}
+      <Clouds />
+
       {/* 🌌 ALAM LANGIT (THE SKY): Kawanan burung walet & ranting siluet di pojok atas */}
       <FlyingBirds />
 

@@ -6,13 +6,13 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[94vh] flex items-center justify-center pt-24 pb-16 overflow-hidden bg-[#09090b]">
+    <section className="relative min-h-[94vh] flex items-center justify-center pt-24 pb-16 overflow-hidden bg-transparent">
       
       {/* Animated Topographic Contour Waves */}
       <motion.div
         animate={{
           y: [0, -12, 0],
-          opacity: [0.04, 0.07, 0.04],
+          opacity: [0.05, 0.09, 0.05],
         }}
         transition={{
           duration: 10,
@@ -22,14 +22,14 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
       >
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <path d="M-100 200 C 200 100, 400 400, 800 250 S 1400 150, 1800 350" fill="none" stroke="#10b981" strokeWidth="1.5" />
-          <path d="M-100 350 C 300 250, 600 500, 1000 350 S 1500 250, 1900 450" fill="none" stroke="#10b981" strokeWidth="1.5" />
-          <path d="M-100 500 C 250 400, 700 650, 1100 500 S 1600 400, 2000 600" fill="none" stroke="#10b981" strokeWidth="1.5" />
-          <path d="M-100 650 C 350 550, 800 800, 1200 650 S 1700 550, 2100 750" fill="none" stroke="#10b981" strokeWidth="1.5" />
+          <path d="M-100 200 C 200 100, 400 400, 800 250 S 1400 150, 1800 350" fill="none" stroke="#38bdf8" strokeWidth="1.5" />
+          <path d="M-100 350 C 300 250, 600 500, 1000 350 S 1500 250, 1900 450" fill="none" stroke="#38bdf8" strokeWidth="1.5" />
+          <path d="M-100 500 C 250 400, 700 650, 1100 500 S 1600 400, 2000 600" fill="none" stroke="#38bdf8" strokeWidth="1.5" />
+          <path d="M-100 650 C 350 550, 800 800, 1200 650 S 1700 550, 2100 750" fill="none" stroke="#38bdf8" strokeWidth="1.5" />
         </svg>
       </motion.div>
 
-      {/* Wandering Emerald Ambient Light Orbs */}
+      {/* Wandering Sky & Oceanic Ambient Light Orbs */}
       <motion.div
         animate={{
           x: [-40, 40, -40],
@@ -41,7 +41,7 @@ export default function Hero() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 h-[520px] w-[680px] rounded-full bg-emerald-500/15 blur-[160px]"
+        className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 h-[520px] w-[680px] rounded-full bg-sky-500/20 blur-[160px]"
       />
       
       <motion.div
@@ -54,7 +54,7 @@ export default function Hero() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="pointer-events-none absolute bottom-1/4 right-1/4 h-[350px] w-[450px] rounded-full bg-teal-500/10 blur-[140px]"
+        className="pointer-events-none absolute bottom-1/4 right-1/4 h-[350px] w-[450px] rounded-full bg-blue-600/15 blur-[140px]"
       />
 
       <div className="relative mx-auto max-w-5xl px-6 text-center">
@@ -64,9 +64,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.25em] text-emerald-400 mb-6"
+          className="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.25em] text-sky-400 mb-6"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
+          <span className="h-1.5 w-1.5 rounded-full bg-sky-400 animate-ping" />
           <span>WELCOME TO MY PORTOFOLIO</span>
         </motion.div>
 
@@ -87,7 +87,7 @@ export default function Hero() {
               repeat: Infinity,
               ease: "linear",
             }}
-            className="bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-500 bg-[length:200%_auto] bg-clip-text text-transparent inline-block"
+            className="bg-gradient-to-r from-sky-400 via-cyan-300 to-blue-400 bg-[length:200%_auto] bg-clip-text text-transparent inline-block"
           >
             FIRDAUS
           </motion.span>
@@ -104,7 +104,7 @@ export default function Hero() {
             Software Engineer
           </span>
           <span className="text-zinc-600">•</span>
-          <span className="px-3 py-1 rounded-full bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 font-semibold shadow-sm shadow-emerald-500/10">
+          <span className="px-3 py-1 rounded-full bg-sky-950/50 border border-sky-500/40 text-sky-300 font-semibold shadow-sm shadow-sky-500/10">
             AI Web Developer
           </span>
           <span className="text-zinc-600">•</span>
@@ -118,7 +118,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
-          className="mx-auto mt-6 max-w-2xl text-sm sm:text-base leading-relaxed text-zinc-400"
+          className="mx-auto mt-6 max-w-2xl text-sm sm:text-base leading-relaxed text-zinc-300"
         >
           Aku berfokus pada pengembangan aplikasi web modern menggunakan Next.js, integrasi Gemini AI API, serta perancangan antarmuka yang bersih, cepat, dan berdampak nyata.
         </motion.p>
@@ -137,9 +137,8 @@ export default function Hero() {
           >
             <Link
               href="#proyek"
-              className="relative group overflow-hidden inline-flex items-center gap-2.5 rounded-full bg-emerald-600 px-7 py-3.5 text-sm font-semibold text-white shadow-xl shadow-emerald-600/25 transition-colors hover:bg-emerald-500"
+              className="relative group overflow-hidden inline-flex items-center gap-2.5 rounded-full bg-sky-600 px-7 py-3.5 text-sm font-semibold text-white shadow-xl shadow-sky-600/30 transition-colors hover:bg-sky-500"
             >
-              {/* Shimmer sweep effect */}
               <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
               <span>Lihat Portofolio</span>
               <motion.div
@@ -161,9 +160,9 @@ export default function Hero() {
               download="CV_Rakha_Dzaky_Firdaus.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-full border border-emerald-500/40 bg-emerald-950/30 px-6 py-3.5 text-sm font-semibold text-emerald-300 transition-colors hover:border-emerald-500 hover:bg-emerald-900/40 shadow-lg shadow-emerald-950/20"
+              className="inline-flex items-center gap-2.5 rounded-full border border-sky-500/40 bg-sky-950/40 px-6 py-3.5 text-sm font-semibold text-sky-300 transition-colors hover:border-sky-400 hover:bg-sky-900/50 shadow-lg shadow-sky-950/20"
             >
-              <Download size={16} className="text-emerald-400" />
+              <Download size={16} className="text-sky-400" />
               <span>Download CV</span>
             </a>
           </motion.div>
@@ -177,9 +176,9 @@ export default function Hero() {
               href="https://wa.me/6281228358630?text=Halo%20Rakha,%20saya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20berkolaborasi."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-full border border-zinc-700 bg-zinc-900/90 px-6 py-3.5 text-sm font-medium text-zinc-200 transition-colors hover:border-emerald-500/60 hover:bg-zinc-800"
+              className="inline-flex items-center gap-2.5 rounded-full border border-zinc-700 bg-zinc-900/90 px-6 py-3.5 text-sm font-medium text-zinc-200 transition-colors hover:border-sky-500/60 hover:bg-zinc-800"
             >
-              <MessageCircle size={16} className="text-emerald-400" />
+              <MessageCircle size={16} className="text-sky-400" />
               <span>Hubungi Saya</span>
             </a>
           </motion.div>

@@ -21,7 +21,7 @@ function GithubIcon({ className = "h-4 w-4" }: { className?: string }) {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-zinc-800/80 bg-[#060608] py-12 text-zinc-500 text-xs">
+    <footer className="border-t border-sky-950/40 bg-transparent py-12 text-zinc-400 text-xs">
       <div className="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
         
         {/* Left copyright */}
@@ -58,7 +58,7 @@ export default function Footer() {
             href="https://wa.me/6281228358630"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-800 bg-zinc-900/80 text-zinc-400 hover:text-emerald-400 hover:border-emerald-500/50 hover:bg-zinc-800 transition-all shadow-sm"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-800 bg-zinc-900/80 text-zinc-400 hover:text-sky-400 hover:border-sky-500/50 hover:bg-zinc-800 transition-all shadow-sm"
             title="Kirim Pesan WhatsApp"
           >
             <MessageCircle size={15} />

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section id="tentang" className="relative py-24 border-t border-zinc-800/80 bg-[#0c0c0e] overflow-hidden">
+    <section id="tentang" className="relative py-24 border-t border-zinc-800/80 bg-transparent overflow-hidden">
       
       {/* Topographic Lines with gentle drift */}
       <motion.div
@@ -21,8 +21,8 @@ export default function About() {
         className="absolute inset-0 pointer-events-none opacity-[0.04]"
       >
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <path d="M-100 150 C 300 50, 700 300, 1200 150 S 1700 250, 2000 150" fill="none" stroke="#10b981" strokeWidth="1.2" />
-          <path d="M-100 300 C 400 200, 800 450, 1300 300 S 1800 400, 2100 300" fill="none" stroke="#10b981" strokeWidth="1.2" />
+          <path d="M-100 150 C 300 50, 700 300, 1200 150 S 1700 250, 2000 150" fill="none" stroke="#38bdf8" strokeWidth="1.2" />
+          <path d="M-100 300 C 400 200, 800 450, 1300 300 S 1800 400, 2100 300" fill="none" stroke="#38bdf8" strokeWidth="1.2" />
         </svg>
       </motion.div>
 
@@ -36,7 +36,7 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-emerald-400">
+          <span className="font-mono text-xs uppercase tracking-[0.25em] text-sky-400">
             ABOUT ME
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
@@ -56,7 +56,7 @@ export default function About() {
             className="space-y-5 lg:col-span-4 text-center lg:text-left"
           >
             <h3 className="text-2xl font-bold text-white">
-              Halo, Saya <span className="text-emerald-400">Rakha</span> 👋
+              Halo, Saya <span className="text-sky-400">Rakha</span> 👋
             </h3>
             <p className="text-sm leading-relaxed text-zinc-300">
               Siswa jurusan Rekayasa Perangkat Lunak (RPL) di SMK Antartika 2 Sidoarjo dengan minat mendalam pada rekayasa perangkat lunak dan arsitektur web modern.
@@ -75,9 +75,9 @@ export default function About() {
                   download="CV_Rakha_Dzaky_Firdaus.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-emerald-500/50 bg-emerald-950/30 px-5 py-2.5 text-xs font-semibold text-emerald-300 hover:border-emerald-400 hover:bg-emerald-900/40 transition-colors shadow-md"
+                  className="inline-flex items-center gap-2 rounded-full border border-sky-500/50 bg-sky-950/40 px-5 py-2.5 text-xs font-semibold text-sky-300 hover:border-sky-400 hover:bg-sky-900/50 transition-colors shadow-md"
                 >
-                  <Download size={14} className="text-emerald-400" />
+                  <Download size={14} className="text-sky-400" />
                   <span>Unduh CV (PDF)</span>
                 </a>
               </motion.div>
@@ -91,9 +91,9 @@ export default function About() {
                   href="https://wa.me/6281228358630?text=Halo%20Rakha,%20saya%20tertarik%20berdiskusi%20denganmu."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/90 px-5 py-2.5 text-xs font-semibold text-zinc-200 hover:border-emerald-500 hover:text-white transition-colors shadow-md"
+                  className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/90 px-5 py-2.5 text-xs font-semibold text-zinc-200 hover:border-sky-500 hover:text-white transition-colors shadow-md"
                 >
-                  <MessageCircle size={14} className="text-emerald-400" />
+                  <MessageCircle size={14} className="text-sky-400" />
                   <span>Kirim Pesan WhatsApp</span>
                 </a>
               </motion.div>
@@ -121,7 +121,7 @@ export default function About() {
               whileHover={{ scale: 1.04, rotate: 1 }}
               className="relative group"
             >
-              {/* Diffuse Pulsing Emerald Aura */}
+              {/* Diffuse Pulsing Sky Aura */}
               <motion.div
                 animate={{
                   opacity: [0.35, 0.65, 0.35],
@@ -132,7 +132,7 @@ export default function About() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute -inset-3 rounded-3xl bg-emerald-500/25 blur-2xl"
+                className="absolute -inset-3 rounded-3xl bg-sky-500/25 blur-2xl"
               />
 
               <div className="relative overflow-hidden rounded-3xl border border-zinc-700/90 bg-zinc-900/90 p-3 shadow-2xl backdrop-blur-xl">
@@ -149,7 +149,7 @@ export default function About() {
                 {/* Caption Bar */}
                 <div className="mt-3.5 px-2 pb-1 text-center">
                   <div className="text-sm font-bold text-white tracking-wide">Rakha Dzaky Firdaus</div>
-                  <div className="text-[11px] text-emerald-400 font-medium mt-0.5">Fullstack & AI Web Developer</div>
+                  <div className="text-[11px] text-sky-400 font-medium mt-0.5">Fullstack & AI Web Developer</div>
                 </div>
               </div>
             </motion.div>
@@ -167,10 +167,10 @@ export default function About() {
             <motion.div
               whileHover={{ x: 8, scale: 1.01 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
-              className="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4 transition-colors hover:border-emerald-500/50 hover:bg-zinc-900"
+              className="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4 transition-colors hover:border-sky-500/50 hover:bg-zinc-900"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-600/10 text-emerald-400 border border-emerald-500/20">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-600/10 text-sky-400 border border-sky-500/20">
                   <Code2 size={20} />
                 </div>
                 <div>
@@ -183,10 +183,10 @@ export default function About() {
             <motion.div
               whileHover={{ x: 8, scale: 1.01 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
-              className="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4 transition-colors hover:border-teal-500/50 hover:bg-zinc-900"
+              className="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4 transition-colors hover:border-blue-500/50 hover:bg-zinc-900"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-600/10 text-teal-400 border border-teal-500/20">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-600/10 text-blue-400 border border-blue-500/20">
                   <Cpu size={20} />
                 </div>
                 <div>
@@ -220,7 +220,7 @@ export default function About() {
               >
                 <Link
                   href="#proyek"
-                  className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-2.5 text-xs font-semibold text-white hover:bg-emerald-500 transition-colors shadow-lg shadow-emerald-600/20"
+                  className="inline-flex items-center gap-2 rounded-full bg-sky-600 px-5 py-2.5 text-xs font-semibold text-white hover:bg-sky-500 transition-colors shadow-lg shadow-sky-600/25"
                 >
                   <span>Lihat Portofolio Proyek</span>
                   <ArrowRight size={13} />

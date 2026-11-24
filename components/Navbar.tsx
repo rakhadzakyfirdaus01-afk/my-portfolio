@@ -50,7 +50,7 @@ export default function Navbar() {
         {/* Brand Avatar */}
         <Link
           href="#tentang"
-          className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-xs font-bold text-white shadow-md shadow-emerald-500/25 transition-transform hover:scale-105"
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-sky-600 text-xs font-bold text-white shadow-md shadow-sky-500/25 transition-transform hover:scale-105"
         >
           R
         </Link>
@@ -69,7 +69,7 @@ export default function Navbar() {
                 {isActive && (
                   <motion.div
                     layoutId="activePill"
-                    className="absolute inset-0 rounded-full bg-emerald-600 shadow-sm shadow-emerald-500/20"
+                    className="absolute inset-0 rounded-full bg-sky-600 shadow-sm shadow-sky-500/20"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -84,7 +84,7 @@ export default function Navbar() {
           href="https://wa.me/6281228358630?text=Halo%20Rakha,%20saya%20melihat%20portofolio%20Anda."
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-8 w-8 sm:w-auto sm:px-3 items-center justify-center gap-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold hover:bg-emerald-500 hover:text-white transition-all duration-200"
+          className="flex h-8 w-8 sm:w-auto sm:px-3 items-center justify-center gap-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-semibold hover:bg-sky-500 hover:text-white transition-all duration-200"
           title="Hubungi via WhatsApp"
         >
           <MessageCircle size={14} />

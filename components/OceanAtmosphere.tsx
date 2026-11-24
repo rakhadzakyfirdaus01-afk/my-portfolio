@@ -264,7 +264,7 @@ export default function OceanAtmosphere() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute bottom-1/4 right-1/4 h-[550px] w-[550px] rounded-full bg-teal-500/15 blur-[150px]"
+        className="absolute bottom-1/4 right-1/4 h-[550px] w-[550px] rounded-full bg-blue-600/15 blur-[150px]"
       />
 
       {/* 2. GELEMBUNG UDARA MIKRO (RISING BUBBLES) */}
@@ -309,8 +309,8 @@ export default function OceanAtmosphere() {
       >
         <MinimalistFish
           size={42}
-          accentColor="#10b981"
-          glowColor="rgba(16,185,129,0.3)"
+          accentColor="#38bdf8"
+          glowColor="rgba(56,189,248,0.35)"
           swimSpeed={0.7}
         />
       </motion.div>

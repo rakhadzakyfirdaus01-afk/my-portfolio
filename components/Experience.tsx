@@ -47,7 +47,7 @@ export default function Experience() {
   ];
 
   return (
-    <section id="pendidikan" className="relative py-24 border-t border-zinc-800/80 bg-[#09090b]">
+    <section id="pendidikan" className="relative py-24 border-t border-zinc-800/80 bg-transparent">
       <div className="relative mx-auto max-w-6xl px-6">
         
         {/* Section Header */}
@@ -58,7 +58,7 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-emerald-400">
+          <span className="font-mono text-xs uppercase tracking-[0.25em] text-sky-400">
             TIMELINE & BACKGROUND
           </span>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
@@ -75,7 +75,7 @@ export default function Experience() {
           {/* Kolom Kiri: Pendidikan */}
           <div>
             <div className="flex items-center gap-2.5 mb-8">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-600/15 text-emerald-400">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-sky-600/15 text-sky-400">
                 <GraduationCap size={20} />
               </div>
               <h3 className="text-xl font-bold text-white">Pendidikan Formal</h3>
@@ -91,7 +91,7 @@ export default function Experience() {
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   className="relative group"
                 >
-                  <div className="absolute -left-[31px] top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-zinc-900 border-2 border-emerald-500 text-[10px] font-bold text-emerald-400">
+                  <div className="absolute -left-[31px] top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-zinc-900 border-2 border-sky-500 text-[10px] font-bold text-sky-400">
                     {idx + 1}
                   </div>
 
@@ -100,7 +100,7 @@ export default function Experience() {
                     className="rounded-2xl border border-zinc-800/90 bg-zinc-900/60 p-5 transition-all hover:border-zinc-700 hover:shadow-lg"
                   >
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="rounded-full bg-emerald-600/10 border border-emerald-500/20 px-3 py-0.5 text-xs font-semibold text-emerald-400">
+                      <span className="rounded-full bg-sky-600/10 border border-sky-500/20 px-3 py-0.5 text-xs font-semibold text-sky-400">
                         {edu.period}
                       </span>
                       <span className="text-xs text-zinc-500 font-mono">{edu.badgeType}</span>
@@ -133,7 +133,7 @@ export default function Experience() {
           {/* Kolom Kanan: Pengalaman & Proyek */}
           <div>
             <div className="flex items-center gap-2.5 mb-8">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-600/15 text-teal-400">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-600/15 text-cyan-400">
                 <Briefcase size={20} />
               </div>
               <h3 className="text-xl font-bold text-white">Pengalaman & Proyek</h3>
@@ -149,7 +149,7 @@ export default function Experience() {
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   className="relative group"
                 >
-                  <div className="absolute -left-[31px] top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-zinc-900 border-2 border-teal-500 text-[10px] font-bold text-teal-400">
+                  <div className="absolute -left-[31px] top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-zinc-900 border-2 border-cyan-500 text-[10px] font-bold text-cyan-400">
                     {idx + 1}
                   </div>
 
@@ -158,7 +158,7 @@ export default function Experience() {
                     className="rounded-2xl border border-zinc-800/90 bg-zinc-900/60 p-5 transition-all hover:border-zinc-700 hover:shadow-lg"
                   >
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="rounded-full bg-teal-600/10 border border-teal-500/20 px-2.5 py-0.5 text-xs font-semibold text-teal-400">
+                      <span className="rounded-full bg-cyan-600/10 border border-cyan-500/20 px-2.5 py-0.5 text-xs font-semibold text-cyan-400">
                         {exp.badge}
                       </span>
                       <span className="text-xs text-zinc-500 font-mono">{exp.period}</span>
@@ -167,7 +167,7 @@ export default function Experience() {
                     <h4 className="mt-3 text-base font-bold text-white">
                       {exp.title}
                     </h4>
-                    <p className="text-xs text-emerald-400 font-medium">
+                    <p className="text-xs text-cyan-400 font-medium">
                       {exp.role}
                     </p>
 
