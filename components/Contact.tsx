@@ -12,6 +12,16 @@ function GithubIcon({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
+function InstagramIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
+
 export default function Contact() {
   const [pesan, setPesan] = useState("");
   const [nama, setNama] = useState("");
@@ -101,6 +111,24 @@ export default function Contact() {
                 <div className="text-xs text-zinc-400">GitHub Profile</div>
                 <div className="text-sm font-bold text-white group-hover:text-zinc-200 transition-colors">
                   rakhadzakyfirdaus01-afk
+                </div>
+              </div>
+            </motion.a>
+
+            <motion.a
+              whileHover={{ x: 6 }}
+              href="https://www.instagram.com/d_fr_rak"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5 transition-all hover:border-pink-500/40 hover:bg-zinc-900 group"
+            >
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-pink-500/10 text-pink-400 group-hover:scale-105 group-hover:bg-gradient-to-tr group-hover:from-amber-500 group-hover:via-pink-500 group-hover:to-purple-600 group-hover:text-white transition-all duration-300">
+                <InstagramIcon className="h-5 w-5" />
+              </div>
+              <div>
+                <div className="text-xs text-zinc-400">Instagram Resmi</div>
+                <div className="text-sm font-bold text-white group-hover:text-pink-300 transition-colors">
+                  @d_fr_rak
                 </div>
               </div>
             </motion.a>
