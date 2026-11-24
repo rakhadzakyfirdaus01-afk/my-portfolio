@@ -18,7 +18,7 @@ export default function About() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute inset-0 pointer-events-none opacity-[0.04]"
+        className="absolute inset-0 pointer-events-none opacity-[0.04] transform-gpu"
       >
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <path d="M-100 150 C 300 50, 700 300, 1200 150 S 1700 250, 2000 150" fill="none" stroke="#38bdf8" strokeWidth="1.2" />
@@ -119,7 +119,7 @@ export default function About() {
                 ease: "easeInOut",
               }}
               whileHover={{ scale: 1.04, rotate: 1 }}
-              className="relative group"
+              className="relative group transform-gpu"
             >
               {/* Diffuse Pulsing Sky Aura */}
               <motion.div
@@ -132,7 +132,7 @@ export default function About() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute -inset-3 rounded-3xl bg-sky-500/25 blur-2xl"
+                className="absolute -inset-3 rounded-3xl bg-sky-500/25 blur-xl transform-gpu"
               />
 
               <div className="relative overflow-hidden rounded-3xl border border-zinc-700/90 bg-zinc-900/90 p-3 shadow-2xl backdrop-blur-xl">

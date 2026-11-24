@@ -17,11 +17,18 @@ html {
   color-scheme: dark;
 }
 
+@media (max-width: 640px) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
-  background-color: #09090b;
+  background-color: #0c234a;
   color: #f4f4f5;
   font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Custom Scrollbar */
@@ -36,12 +43,12 @@ body {
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #10b981;
+  background: #38bdf8;
 }
 
 /* Subtle Carbon Grid / Dots */
 .carbon-pattern {
-  background-image: radial-gradient(rgba(16, 185, 129, 0.08) 1px, transparent 1px),
+  background-image: radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px),
                     radial-gradient(rgba(113, 113, 122, 0.05) 1px, transparent 1px);
   background-size: 32px 32px;
   background-position: 0 0, 16px 16px;

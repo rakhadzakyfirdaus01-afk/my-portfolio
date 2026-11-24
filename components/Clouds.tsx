@@ -13,13 +13,13 @@ export default function Clouds() {
   return (
     <div className="absolute top-0 left-0 right-0 h-[120vh] pointer-events-none z-10 overflow-hidden">
       
-      {/* 1. SAPUAN CAHAYA LANGIT / ATMOSPHERIC CELESTIAL GLOW */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[350px] bg-sky-400/10 blur-[130px] rounded-full" />
-      <div className="absolute top-20 right-1/4 w-[500px] h-[300px] bg-blue-500/10 blur-[120px] rounded-full" />
+      {/* 1. SAPUAN CAHAYA LANGIT / ATMOSPHERIC CELESTIAL GLOW (Desktop Only untuk efisiensi GPU mobile) */}
+      <div className="hidden sm:block absolute top-0 left-1/4 w-[600px] h-[350px] bg-sky-400/10 blur-[130px] rounded-full" />
+      <div className="hidden sm:block absolute top-20 right-1/4 w-[500px] h-[300px] bg-blue-500/10 blur-[120px] rounded-full" />
 
-      {/* 2. AWAN KUMULUS BESAR 1 (Kiri Atas melayang ke Kanan - Tenang & Megah) */}
+      {/* 2. AWAN KUMULUS UTAMA (Mobile & Desktop - Ringan tanpa blur berat di mobile) */}
       <motion.div
-        className="absolute top-8 left-[-15%] w-[520px] sm:w-[720px] opacity-45"
+        className="absolute top-8 left-[-15%] w-[420px] sm:w-[720px] opacity-45 transform-gpu"
         animate={{
           x: ["0vw", "125vw"],
         }}
@@ -29,7 +29,7 @@ export default function Clouds() {
           ease: "linear",
         }}
       >
-        <svg viewBox="0 0 460 170" className="w-full h-auto overflow-visible filter blur-[1px]">
+        <svg viewBox="0 0 460 170" className="w-full h-auto overflow-visible sm:filter sm:blur-[1px]">
           <defs>
             <linearGradient id="cloudMainGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
               <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9" />
@@ -45,9 +45,9 @@ export default function Clouds() {
         </svg>
       </motion.div>
 
-      {/* 3. AWAN SEDANG 2 (Tengah Langit - Bentuk Strato-Kumulus Elegan) */}
+      {/* 3. AWAN SEDANG 2 (Desktop Only - Strato-Kumulus) */}
       <motion.div
-        className="absolute top-44 left-[-22%] w-[440px] sm:w-[620px] opacity-40"
+        className="hidden sm:block absolute top-44 left-[-22%] w-[620px] opacity-40 transform-gpu"
         animate={{
           x: ["0vw", "130vw"],
         }}
@@ -74,9 +74,9 @@ export default function Clouds() {
         </svg>
       </motion.div>
 
-      {/* 4. AWAN 3 (Melayang Perlahan dari Kanan ke Kiri di Latar Belakang) */}
+      {/* 4. AWAN 3 (Desktop Only - Kanan ke Kiri) */}
       <motion.div
-        className="absolute top-28 right-[-18%] w-[380px] sm:w-[540px] opacity-35"
+        className="hidden sm:block absolute top-28 right-[-18%] w-[540px] opacity-35 transform-gpu"
         animate={{
           x: ["0vw", "-125vw"],
         }}
@@ -102,9 +102,9 @@ export default function Clouds() {
         </svg>
       </motion.div>
 
-      {/* 5. AWAN WISPY HALUS DEKAT NAMA (Area Headline Hero) */}
+      {/* 5. AWAN WISPY HALUS (Desktop Only) */}
       <motion.div
-        className="absolute top-[280px] left-[-10%] w-[340px] sm:w-[480px] opacity-30"
+        className="hidden sm:block absolute top-[280px] left-[-10%] w-[480px] opacity-30 transform-gpu"
         animate={{
           x: ["0vw", "120vw"],
         }}

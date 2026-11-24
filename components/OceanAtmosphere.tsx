@@ -24,9 +24,8 @@ function MinimalistFish({
       style={{
         width: size,
         height: (size * 26) / 58,
-        filter: `drop-shadow(0 2px 8px ${glowColor})`,
       }}
-      className="relative select-none pointer-events-none"
+      className="relative select-none pointer-events-none sm:drop-shadow-[0_2px_8px_rgba(6,182,212,0.35)] transform-gpu"
     >
       <svg
         viewBox="0 0 62 28"
@@ -200,7 +199,7 @@ function RisingBubbles() {
   ];
 
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden">
+    <div className="hidden sm:block absolute inset-0 pointer-events-none overflow-hidden">
       {bubbles.map((b) => (
         <motion.div
           key={b.id}
@@ -240,7 +239,7 @@ export default function OceanAtmosphere() {
   return (
     <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
       
-      {/* 1. UNDERWATER CAUSTIC AMBIENT GLOW (Cahaya Laut Dalam) */}
+      {/* 1. UNDERWATER CAUSTIC AMBIENT GLOW (Desktop Only) */}
       <motion.div
         animate={{
           opacity: [0.03, 0.07, 0.03],
@@ -251,7 +250,7 @@ export default function OceanAtmosphere() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-1/3 left-1/4 h-[600px] w-[600px] rounded-full bg-cyan-500/15 blur-[160px]"
+        className="hidden sm:block absolute top-1/3 left-1/4 h-[600px] w-[600px] rounded-full bg-cyan-500/15 blur-[160px]"
       />
 
       <motion.div
@@ -264,17 +263,17 @@ export default function OceanAtmosphere() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute bottom-1/4 right-1/4 h-[550px] w-[550px] rounded-full bg-blue-600/15 blur-[150px]"
+        className="hidden sm:block absolute bottom-1/4 right-1/4 h-[550px] w-[550px] rounded-full bg-blue-600/15 blur-[150px]"
       />
 
-      {/* 2. GELEMBUNG UDARA MIKRO (RISING BUBBLES) */}
+      {/* 2. GELEMBUNG UDARA MIKRO (RISING BUBBLES - Desktop Only) */}
       <RisingBubbles />
 
       {/* 3. KAWANAN IKAN (SCHOOL OF FISH) */}
       
       {/* Ikan 1: Pemimpin Kawanan (Berenang dari Kiri ke Kanan) */}
       <motion.div
-        className="absolute"
+        className="absolute transform-gpu"
         animate={{
           x: ["-8vw", "28vw", "60vw", "92vw", "112vw"],
           y: ["18vh", "22vh", "16vh", "24vh", "20vh"],
@@ -295,7 +294,7 @@ export default function OceanAtmosphere() {
 
       {/* Ikan 2: Mengikuti Ikan 1 (Formasi Bergerombol) */}
       <motion.div
-        className="absolute"
+        className="absolute transform-gpu"
         animate={{
           x: ["-12vw", "24vw", "56vw", "88vw", "108vw"],
           y: ["24vh", "27vh", "21vh", "29vh", "25vh"],
@@ -315,9 +314,9 @@ export default function OceanAtmosphere() {
         />
       </motion.div>
 
-      {/* Ikan 3: Ikan Kecil Menyusul di Belakang */}
+      {/* Ikan 3: Ikan Kecil (Desktop Only) */}
       <motion.div
-        className="absolute opacity-80"
+        className="hidden sm:block absolute opacity-80 transform-gpu"
         animate={{
           x: ["-16vw", "20vw", "52vw", "84vw", "104vw"],
           y: ["20vh", "25vh", "19vh", "26vh", "22vh"],
@@ -337,9 +336,9 @@ export default function OceanAtmosphere() {
         />
       </motion.div>
 
-      {/* Ikan 4: Ikan di Kedalaman Menengah Berenang Melintasi Kontak */}
+      {/* Ikan 4: Ikan di Kedalaman Menengah (Desktop Only) */}
       <motion.div
-        className="absolute opacity-70"
+        className="hidden sm:block absolute opacity-70 transform-gpu"
         animate={{
           x: ["-10vw", "30vw", "65vw", "95vw", "115vw"],
           y: ["62vh", "58vh", "66vh", "60vh", "64vh"],
@@ -359,9 +358,9 @@ export default function OceanAtmosphere() {
         />
       </motion.div>
 
-      {/* Ikan 5: Ikan Berenang Sebaliknya (Dari Kanan ke Kiri) */}
+      {/* Ikan 5: Ikan Berenang Sebaliknya (Desktop Only) */}
       <motion.div
-        className="absolute opacity-75"
+        className="hidden sm:block absolute opacity-75 transform-gpu"
         initial={{ scaleX: -1 }}
         animate={{
           x: ["112vw", "82vw", "50vw", "18vw", "-10vw"],
@@ -382,9 +381,9 @@ export default function OceanAtmosphere() {
         />
       </motion.div>
 
-      {/* Ikan 6: Ikan Pari Manta di Samudra Paling Dalam (Footer Area) */}
+      {/* Ikan 6: Ikan Pari Manta di Samudra Paling Dalam (Desktop Only) */}
       <motion.div
-        className="absolute opacity-40"
+        className="hidden sm:block absolute opacity-40 transform-gpu"
         animate={{
           x: ["-15vw", "25vw", "60vw", "90vw", "118vw"],
           y: ["86vh", "84vh", "88vh", "85vh", "87vh"],

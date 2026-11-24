@@ -9,24 +9,32 @@ export default function Navbar() {
   const [activeTab, setActiveTab] = useState("tentang");
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["tentang", "pendidikan", "proyek", "keahlian", "kontak"];
-      const scrollY = window.scrollY;
+    let ticking = false;
 
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop - 140;
-          const height = el.offsetHeight;
-          if (scrollY >= top && scrollY < top + height) {
-            setActiveTab(section);
-            break;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const sections = ["tentang", "pendidikan", "proyek", "keahlian", "kontak"];
+          const scrollY = window.scrollY;
+
+          for (const section of sections) {
+            const el = document.getElementById(section);
+            if (el) {
+              const top = el.offsetTop - 140;
+              const height = el.offsetHeight;
+              if (scrollY >= top && scrollY < top + height) {
+                setActiveTab(section);
+                break;
+              }
+            }
           }
-        }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

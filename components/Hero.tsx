@@ -19,7 +19,7 @@ export default function Hero() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none transform-gpu"
       >
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <path d="M-100 200 C 200 100, 400 400, 800 250 S 1400 150, 1800 350" fill="none" stroke="#38bdf8" strokeWidth="1.5" />
@@ -29,7 +29,7 @@ export default function Hero() {
         </svg>
       </motion.div>
 
-      {/* Wandering Sky & Oceanic Ambient Light Orbs */}
+      {/* Wandering Sky & Oceanic Ambient Light Orbs (Desktop Animated) */}
       <motion.div
         animate={{
           x: [-40, 40, -40],
@@ -41,7 +41,7 @@ export default function Hero() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 h-[520px] w-[680px] rounded-full bg-sky-500/20 blur-[160px]"
+        className="hidden sm:block pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 h-[520px] w-[680px] rounded-full bg-sky-500/20 blur-[160px] transform-gpu"
       />
       
       <motion.div
@@ -54,8 +54,11 @@ export default function Hero() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="pointer-events-none absolute bottom-1/4 right-1/4 h-[350px] w-[450px] rounded-full bg-blue-600/15 blur-[140px]"
+        className="hidden sm:block pointer-events-none absolute bottom-1/4 right-1/4 h-[350px] w-[450px] rounded-full bg-blue-600/15 blur-[140px] transform-gpu"
       />
+
+      {/* Static Subtle Ambient Glow for Mobile (Zero GPU lag) */}
+      <div className="sm:hidden pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 h-[280px] w-[280px] rounded-full bg-sky-500/15 blur-[80px]" />
 
       <div className="relative mx-auto max-w-5xl px-6 text-center">
         

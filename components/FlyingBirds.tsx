@@ -33,10 +33,9 @@ function MinimalistSwallow({
       style={{
         width: size,
         height: (size * 52) / 90,
-        filter: `drop-shadow(0 0 10px ${glowColor})`,
         transform: direction === "left" ? "scaleX(-1)" : "none",
       }}
-      className="relative select-none pointer-events-none"
+      className="relative select-none pointer-events-none sm:drop-shadow-[0_0_10px_rgba(56,189,248,0.4)] transform-gpu"
     >
       <svg
         viewBox="0 0 90 52"
@@ -103,7 +102,7 @@ function MinimalistPerchedSwallow({
 }) {
   return (
     <motion.div
-      className="absolute top-[86px] sm:top-[92px] right-[132px] sm:right-[158px] w-[42px] sm:w-[48px] h-[36px] sm:h-[42px] cursor-pointer group pointer-events-auto"
+      className="absolute top-[34%] right-[44%] w-[14%] aspect-[46/40] cursor-pointer group pointer-events-auto"
       onClick={onTakeoff}
       title="Klik untuk menerbangkan burung walet"
       initial={{ scale: 0.8, opacity: 0 }}
@@ -122,7 +121,7 @@ function MinimalistPerchedSwallow({
 
       <svg
         viewBox="0 0 46 40"
-        className="w-full h-full overflow-visible drop-shadow-[0_2px_10px_rgba(56,189,248,0.4)]"
+        className="w-full h-full overflow-visible sm:drop-shadow-[0_2px_10px_rgba(56,189,248,0.4)]"
       >
         <defs>
           <linearGradient id="perchedSwallowGrad" x1="50%" y1="0%" x2="50%" y2="100%">
@@ -202,7 +201,7 @@ function MinimalistCornerBranch({
   children?: React.ReactNode;
 }) {
   return (
-    <div className="absolute top-0 right-0 pointer-events-none z-10 w-[240px] sm:w-[320px] aspect-[360/240] overflow-visible opacity-90">
+    <div className="absolute top-0 right-0 pointer-events-none z-10 w-[170px] sm:w-[320px] aspect-[360/240] overflow-visible opacity-90">
       <motion.div
         className="w-full h-full relative"
         animate={{
@@ -407,11 +406,11 @@ export default function FlyingBirds() {
         )}
       </AnimatePresence>
 
-      {/* 3. KAWANAN BURUNG MELINTAS DI LANGIT (FLOCK OF SWALLOWS) */}
+      {/* 3. KAWANAN BURUNG MELINTAS DI LANGIT (Desktop Only untuk efisiensi scroll mobile) */}
       
       {/* Burung 1: Pemimpin Kawanan (Terbang dari Kiri ke Kanan) */}
       <motion.div
-        className="absolute"
+        className="hidden sm:block absolute transform-gpu"
         animate={{
           x: ["-8vw", "25vw", "58vw", "88vw", "112vw"],
           y: ["14vh", "11vh", "17vh", "13vh", "16vh"],
@@ -433,7 +432,7 @@ export default function FlyingBirds() {
 
       {/* Burung 2: Pengiring (Formasi Sayap Belakang) */}
       <motion.div
-        className="absolute"
+        className="hidden sm:block absolute transform-gpu"
         animate={{
           x: ["-14vw", "19vw", "52vw", "82vw", "106vw"],
           y: ["18vh", "15vh", "21vh", "17vh", "20vh"],
@@ -455,7 +454,7 @@ export default function FlyingBirds() {
 
       {/* Burung 3: Burung Jauh di Latar Belakang (Kedalaman / Parallax Tinggi) */}
       <motion.div
-        className="absolute opacity-60"
+        className="hidden sm:block absolute opacity-60 transform-gpu"
         animate={{
           x: ["-10vw", "28vw", "64vw", "94vw", "114vw"],
           y: ["7vh", "5vh", "9vh", "6vh", "8vh"],
@@ -477,7 +476,7 @@ export default function FlyingBirds() {
 
       {/* Burung 4: Burung Melintas Berlawanan Arah (Dari Kanan ke Kiri Menghadap Kiri) */}
       <motion.div
-        className="absolute opacity-75"
+        className="hidden sm:block absolute opacity-75 transform-gpu"
         animate={{
           x: ["112vw", "82vw", "50vw", "18vw", "-10vw"],
           y: ["24vh", "28vh", "22vh", "27vh", "23vh"],
